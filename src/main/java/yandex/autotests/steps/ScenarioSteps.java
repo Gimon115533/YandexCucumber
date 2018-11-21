@@ -10,8 +10,8 @@ public class ScenarioSteps {
 
     MainPageSteps mainPageSteps = new MainPageSteps();
 
-//    ChoiceInsuranceSteps choiceInsuranceSteps = new ChoiceInsuranceSteps();
-//
+    MarketSteps marketSteps = new MarketSteps();
+
 //    TravelInsuranceSteps travelInsuranceSteps = new TravelInsuranceSteps();
 //
     @When("^выбран пункт меню \"(.+)\"$")
@@ -19,19 +19,20 @@ public class ScenarioSteps {
         mainPageSteps.selectMenuItem(menuName);
     }
 
+    @Then("^заголовок страницы - Маркет равен \"(.+)\"$")
+    public void checkTitleMarketPage(String title){
+        marketSteps.checkPageTitle(title);
+    }
+
+    @When("^выполнено нажатие на кнопку Электроника$")
+    public void clickBtnElektronika(){
+        marketSteps.clickElektronika();
+    }
+
+
 //    @When("^выбран вид страхования \"(.+)\"$")
 //    public void selectMenuInsurance(String menuName){
 //        mainPageSteps.selectMenuInsurance(menuName);
-//    }
-//
-//    @Then("^заголовок страницы - Путешествия и покупки равен \"(.+)\"$")
-//    public void checkTitleDMSPage(String title){
-//        choiceInsuranceSteps.checkPageTitle(title);
-//    }
-//
-//    @When("^выполнено нажатие на кнопку Оформить онлайн$")
-//    public void clickBtnSendApp(){
-//        choiceInsuranceSteps.goToSendAppPage();
 //    }
 //
 //    @When("^выполнить переход на новую вкладку$")
