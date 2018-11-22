@@ -23,6 +23,35 @@ public class MarketSteps {
         new MarketPage().elektronikaBtn.click();
     }
 
+    @Step("выполнено нажатие на кнопку Телевизоры")
+    public void clickTelevizor(){
+        new MarketPage().televizorBtn.click();
+    }
+
+    @Step("выполнено нажатие на кнопку Все фильтры")
+    public void clickVseFiltri(){
+        new MarketPage().vseFiltriBtn.click();
+    }
+
+    @Step("поле {0} заполняется значением {1}")
+    public void fillField(String field, String value){
+        new MarketPage().fillField(field, value);
+    }
+
+    @Step("выполнено нажатие на кнопку Samsung")
+    public void clickSamsungBtn(){
+        new MarketPage().samsungBtn.click();
+    }
+
+    @Step("выполнено нажатие на кнопку LG")
+    public void clickLgBtn(){
+        new MarketPage().lgBtn.click();
+    }
+
+    @Step("выполнено нажатие на кнопку Показать подходящие")
+    public void clickApplyBtn(){
+        new MarketPage().applyBtn.click();
+    }
 
 //   @Step("выбран пункт меню {0}")
 //    public void selectMenuItem(String menuItem){

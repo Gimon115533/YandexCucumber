@@ -29,6 +29,38 @@ public class ScenarioSteps {
         marketSteps.clickElektronika();
     }
 
+    @When("^выполнено нажатие на кнопку Телевизоры$")
+    public void clickBtnTelevizor(){
+        marketSteps.clickTelevizor();
+    }
+
+    @When("^выполнено нажатие на кнопку Все фильтры$")
+    public void clickBtnVseFiltri(){
+        marketSteps.clickVseFiltri();
+    }
+
+    @When("^заполняются поля:$")
+    public void fillForm(DataTable fields){
+        fields.asMap(String.class, String.class)
+                .forEach((field, value) -> marketSteps.fillField(field, value));
+
+    }
+
+    @When("^выполнено нажатие на кнопку Samsung$")
+    public void clickBtnSamsung(){
+        marketSteps.clickSamsungBtn();
+    }
+
+    @When("^выполнено нажатие на кнопку LG$")
+    public void clickBtnLg(){
+        marketSteps.clickLgBtn();
+    }
+
+    @When("^выполнено нажатие на кнопку Показать подходящие$")
+    public void clickBtnApply(){
+        marketSteps.clickApplyBtn();
+    }
+
 
 //    @When("^выбран вид страхования \"(.+)\"$")
 //    public void selectMenuInsurance(String menuName){
