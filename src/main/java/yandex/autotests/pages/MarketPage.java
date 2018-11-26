@@ -1,5 +1,6 @@
 package yandex.autotests.pages;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -49,13 +50,20 @@ public class MarketPage extends BasePageObject {
     @FindBy(xpath = "//a[@class='button button_size_l button_theme_pseudo i-bem button_action_show-filtered n-filter-panel-extend__controll-button_size_big button_js_inited']")
     public WebElement applyBtn;
 
+    public String numberVariants = String.valueOf(new BaseSteps().driver.findElements(By.xpath("//div[@class='n-snippet-card2__title']/a[contains(text(),'Телевизор')]")).size());
 
-////найти меню с основными разделами
-//    @FindBy(xpath = "//div[@class='home-arrow__tabs']")
-//    WebElement menuItems;
-//// найти в меню Маркет и кликнуть по нему
-//    public void selectMenuItem(String itemName){
-//        menuItems.findElement(By.xpath(".//a[contains(text(),'"+itemName+"')]")).click();
-//    }
+    @FindBy(xpath = "//div[@class='n-snippet-card2__title']/a[contains(text(),'Телевизор')][1]")
+    public WebElement numberFirst;
+
+    public static String aA=new MarketPage().numberFirst.getText();
+
+    @FindBy(xpath = "//input[@id='header-search']")
+    public WebElement inputText;
+
+    @FindBy(xpath = "//span[@class='button2__text'][contains(text(),'Найти')]")
+    public WebElement searchBtn;
+
+    @FindBy(xpath = "//h1[@class='title title_size_28 title_bold_yes']")
+    public WebElement nameModelFaund;
 
 }

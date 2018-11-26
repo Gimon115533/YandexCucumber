@@ -61,60 +61,33 @@ public class ScenarioSteps {
         marketSteps.clickApplyBtn();
     }
 
+    @Then("^элементов на странице \"(.+)\"$")
+    public void checkNumberVar(String numberVar){
+        marketSteps.checkNumberVariants(numberVar);
 
-//    @When("^выбран вид страхования \"(.+)\"$")
-//    public void selectMenuInsurance(String menuName){
-//        mainPageSteps.selectMenuInsurance(menuName);
-//    }
-//
-//    @When("^выполнить переход на новую вкладку$")
-//    public void goToNewOpenPage(){
-//        choiceInsuranceSteps.goToNewPage();
-//    }
-//
-//    @Then("^заголовок страницы - Страхование путешественников равен \"(.+)\"$")
-//    public void checkTitleTravelInsurancePage(String title){
-//        travelInsuranceSteps.checkPageTitle(title);
-//    }
-//
-//    @When("^выполнить нажатие на кнопку Минимальная$")
-//    public void clickBtnMin(){
-//        travelInsuranceSteps.BtnMin();
-//    }
-//
-//    @When("^выполнить нажатие на кнопку Оформить$")
-//    public void clickBtnFormalize(){
-//        travelInsuranceSteps.BtnFormalize();
-//    }
-//
-//    @Then("^появилось поле на вкладке Оформление равное \"(.+)\"$")
-//    public void checkPoleTravelInsurancePage(String pole){
-//        travelInsuranceSteps.checkPagePole(pole);
-//    }
-//
-//    @When("^заполняются поля:$")
-//    public void fillForm(DataTable fields){
-//        fields.asMap(String.class, String.class)
-//                .forEach((field, value) -> travelInsuranceSteps.fillField(field, value));
-//
-//    }
-//
-//    @When("^выполнить нажатие на кнопку Продолжить$")
-//    public void clickBtnNext(){
-//        travelInsuranceSteps.BtnNext();
-//    }
-//
-//    @Then("^значения полей равны:$")
-//    public void checkFillForm(DataTable fields){
-//        fields.asMap(String.class, String.class)
-//                .forEach((field, value) -> travelInsuranceSteps.checkFillField(field, value));
-//    }
-//
-//    @Then("^присутствует сообщение об ошибке \"(.+)\"$")
-//    public void checkErrorMessage(String errorMessage){
-//        travelInsuranceSteps.checkErrorMessageField(errorMessage);
-//
-//    }
-//
+    }
+
+    @When("^получен первый элемент в списке$")
+    public void getNumberF(){
+        marketSteps.getNumberFirst();
+    }
+
+    @When("^в поисковую строку ввести запомненное значение $")
+    public void inputTextS(){
+        marketSteps.inputTextSearch();
+
+    }
+
+    @When("^нажать кнопку Найти$")
+    public void clickBtnSearch(){
+        marketSteps.clickSearchBtn();
+    }
+
+    @Then("^проверить, что наименование товара соответствует запомненному значению \"(.+)\"$")
+    public void checkTelevizorName(){
+        marketSteps.checkNameTelevizor();
+
+    }
+
 }
 

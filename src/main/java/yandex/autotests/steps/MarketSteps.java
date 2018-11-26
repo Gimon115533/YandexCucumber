@@ -53,10 +53,36 @@ public class MarketSteps {
         new MarketPage().applyBtn.click();
     }
 
-//   @Step("выбран пункт меню {0}")
-//    public void selectMenuItem(String menuItem){
-//        new MainPage().selectMenuItem(menuItem);
-//    }
+    @Step("элементов на странице {0}")
+    public void checkNumberVariants(String numberVar){
+        String actualNumber = String.valueOf(new MarketPage().numberVariants);
+        assertTrue(String.format("Заголовок равен [%s]. Ожидалось - [%s]",
+                actualNumber, numberVar), actualNumber.contains(numberVar));
+    }
 
+    @Step("получен первый элемент в списке")
+    public void getNumberFirst(){
+
+        String a=new MarketPage().numberFirst.getText();
+    }
+
+
+    @Step("в поисковую строку ввести запомненное значение")
+    public void inputTextSearch(){
+        new MarketPage().inputText.sendKeys(MarketPage.aA);
+    }
+
+    @Step("нажать кнопку Найти")
+    public void clickSearchBtn(){
+        new MarketPage().searchBtn.click();
+    }
+
+    @Step("проверить, что наименование товара соответствует запомненному значению")
+    public void checkNameTelevizor(){
+        String actualTitle = new MarketPage().nameModelFaund.getText();
+        String ErrorMessage= MarketPage.aA;
+        assertTrue(String.format("Заголовок равен [%s]. Ожидалось - [%s]",
+                actualTitle, ErrorMessage), actualTitle.contains(ErrorMessage));
+    }
 
 }
