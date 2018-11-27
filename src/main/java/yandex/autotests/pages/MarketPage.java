@@ -55,8 +55,6 @@ public class MarketPage extends BasePageObject {
     @FindBy(xpath = "//div[@class='n-snippet-card2__title']/a[contains(text(),'Телевизор')][1]")
     public WebElement numberFirst;
 
-    public static String aA=new MarketPage().numberFirst.getText();
-
     @FindBy(xpath = "//input[@id='header-search']")
     public WebElement inputText;
 

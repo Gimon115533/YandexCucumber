@@ -12,8 +12,8 @@ public class ScenarioSteps {
 
     MarketSteps marketSteps = new MarketSteps();
 
-//    TravelInsuranceSteps travelInsuranceSteps = new TravelInsuranceSteps();
-//
+    HeadPhonesSteps headPhonesSteps=new HeadPhonesSteps();
+
     @When("^выбран пункт меню \"(.+)\"$")
     public void selectMenuItem(String menuName){
         mainPageSteps.selectMenuItem(menuName);
@@ -34,6 +34,12 @@ public class ScenarioSteps {
         marketSteps.clickTelevizor();
     }
 
+    @When("^выполнено нажатие на кнопку Наушники$")
+    public void clickBtnheadPhones(){
+        headPhonesSteps.clickHeadPhones();
+    }
+
+
     @When("^выполнено нажатие на кнопку Все фильтры$")
     public void clickBtnVseFiltri(){
         marketSteps.clickVseFiltri();
@@ -51,6 +57,12 @@ public class ScenarioSteps {
         marketSteps.clickSamsungBtn();
     }
 
+    @When("^выполнено нажатие на кнопку Beats$")
+    public void clickBtnBeats(){
+        headPhonesSteps.clickBeatsBtn();
+    }
+
+
     @When("^выполнено нажатие на кнопку LG$")
     public void clickBtnLg(){
         marketSteps.clickLgBtn();
@@ -67,27 +79,49 @@ public class ScenarioSteps {
 
     }
 
+    @Then("^элементов на странице наушники \"(.+)\"$")
+    public void checkNumberVarHead(String numberVar){
+        headPhonesSteps.checkNumberVariantsHead(numberVar);
+
+    }
+
+
     @When("^получен первый элемент в списке$")
     public void getNumberF(){
         marketSteps.getNumberFirst();
     }
 
+    @When("^получен первый элемент в списке наушники$")
+    public void getNumberFHead(){
+        headPhonesSteps.getNumberFirstHead();
+    }
+
+
     @When("^в поисковую строку ввести запомненное значение $")
     public void inputTextS(){
         marketSteps.inputTextSearch();
-
     }
 
-    @When("^нажать кнопку Найти$")
+    @When("^в поисковую строку ввести запомненное значение наушники $")
+    public void inputTextSHead(){
+        headPhonesSteps.inputTextSearchHead();
+    }
+
+    @When("^нажать кнопку Найти $")
     public void clickBtnSearch(){
         marketSteps.clickSearchBtn();
     }
 
-    @Then("^проверить, что наименование товара соответствует запомненному значению \"(.+)\"$")
+    @Then("^проверить, что наименование товара соответствует запомненному значению $")
     public void checkTelevizorName(){
         marketSteps.checkNameTelevizor();
 
     }
 
+    @Then("^проверить, что наименование товара соответствует запомненному значению наушники $")
+    public void checkHeadPhonesName(){
+        headPhonesSteps.checkNameHeadPhones();
+
+    }
 }
 

@@ -2,6 +2,7 @@ package yandex.autotests.steps;
 
 import ru.yandex.qatools.allure.annotations.Step;
 import yandex.autotests.pages.MarketPage;
+import yandex.autotests.pages.SaveNameProdukt;
 
 import static org.junit.Assert.assertTrue;
 
@@ -10,6 +11,8 @@ import static org.junit.Assert.assertTrue;
  */
 
 public class MarketSteps {
+
+    SaveNameProdukt saveNameProdukt=new SaveNameProdukt();
 
     @Step("заголовок страницы - Маркет равен {0}")
     public void checkPageTitle(String expectedTitle){
@@ -62,14 +65,13 @@ public class MarketSteps {
 
     @Step("получен первый элемент в списке")
     public void getNumberFirst(){
-
-        String a=new MarketPage().numberFirst.getText();
+        saveNameProdukt.saveName("Телевизор", new MarketPage().numberFirst);
     }
 
 
     @Step("в поисковую строку ввести запомненное значение")
     public void inputTextSearch(){
-        new MarketPage().inputText.sendKeys(MarketPage.aA);
+        new MarketPage().inputText.sendKeys(saveNameProdukt.getNameProdukt("Телевизор"));
     }
 
     @Step("нажать кнопку Найти")
@@ -80,7 +82,7 @@ public class MarketSteps {
     @Step("проверить, что наименование товара соответствует запомненному значению")
     public void checkNameTelevizor(){
         String actualTitle = new MarketPage().nameModelFaund.getText();
-        String ErrorMessage= MarketPage.aA;
+        String ErrorMessage= saveNameProdukt.getNameProdukt("Телевизор");
         assertTrue(String.format("Заголовок равен [%s]. Ожидалось - [%s]",
                 actualTitle, ErrorMessage), actualTitle.contains(ErrorMessage));
     }
